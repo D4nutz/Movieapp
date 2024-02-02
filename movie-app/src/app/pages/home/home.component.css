@@ -1,0 +1,133 @@
+/* banner style */
+
+.carousel__frame {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel__slides {
+  display: block;
+}
+
+.card__image{
+  max-width: 80%;
+  height: 60%;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+}
+
+.carousel__item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: inline-block;
+  z-index: 0;
+  top: 0;
+}
+
+.slide__container{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.carousel__slides .active {
+z-index: 1;
+}
+
+  
+  /* Next and Preive arrow */ 
+
+.control {
+  height: 100%;
+  justify-content: space-between;
+  z-index: 55;
+  position: relative;
+  padding: 0rem 2rem;
+}
+
+.control .arrow {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  align-items: flex-start;
+  text-transform: uppercase;
+  position: relative;
+  transition: transform 0.3s;
+}
+.control .arrow span {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s 0s;
+}
+.control .arrow:hover span {
+  opacity: 1;
+  transition: opacity 0.3s 0.1s;
+}
+.control .arrow:before {
+  content: '';
+  display: block;
+  border: solid #fff;
+  border-width: 2px 2px 0 0;
+  position: absolute;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+}
+.control .arrow.arrow--left:before {
+  transform: rotate(-135deg);
+  right: 0;
+  transition: right 0.3s 0.2s;
+}
+.control .arrow.arrow--left:hover:before {
+  right: 100%;
+  transition: right 0.3s;
+}
+.control .arrow.arrow--right {
+  text-align: right;
+}
+.control .arrow.arrow--right:before {
+  left: 0;
+  transform: rotate(45deg);
+  transition: left 0.3s 0.2s;
+}
+.control .arrow.arrow--right:hover:before {
+  left: 100%;
+  transition: left 1s;
+}
+.control .arrow:hover {
+  transform: none;
+}
+
+.carousel__content{
+  max-width: 20%;
+  min-height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+}
+
+.movie__description{
+  width: 100%;
+  height: 100%;
+  font-size: .65rem;
+  color: #000;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+  padding: 1rem;
+}
+
