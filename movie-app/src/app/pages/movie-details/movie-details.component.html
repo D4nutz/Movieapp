@@ -1,1 +1,32 @@
-<p>movie-details works!</p>
+      <div class="movie_card" id="bright">
+        <div class="info_section">
+          <div class="movie_header">
+            <img class="locandina"  src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.poster_path }}" alt="{{ getMovieDetailResult.original_title }}"/>
+            <h1>{{getMovieDetailResult.title}}</h1>
+            <h4>{{getMovieDetailResult.release_date}}, {{getMovieDetailResult.status}}</h4>
+            <span class="minutes">{{getMovieDetailResult.runtime}} min</span>
+            <p class="type">Action, Crime, Fantasy</p>
+          </div>
+          <div class="movie_desc">
+            <p class="text">{{getMovieDetailResult.overview}}</p>
+          </div>
+          <div class="movie_social">
+            <ul class="flex-row">
+                <li class="flex-row flex-center">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <p>{{getMovieDetailResult.vote_average}}</p>
+                </li>
+                <li class="flex-row flex-center">
+                    <i class="fa-solid fa-play"></i>
+                    <p>{{getMovieDetailResult.popularity}}</p>
+                </li>
+                <li class="flex-row flex-center">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <div class="blur_back bright_back">
+            <img src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.backdrop_path }}" alt="{{ getMovieDetailResult.original_title }}">
+        </div>
+      </div>

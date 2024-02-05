@@ -4,16 +4,31 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieApiServiceService } from './service/movie-api-service.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './pages/home/home.component'; // Adjust the path accordingly
+import { HomeComponent } from './pages/home/home.component'; 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgOptimizedImage, IMAGE_CONFIG } from '@angular/common';
+import { FavoriteService } from './service/movie-api-service.service';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    // Other components, directives, and pipes
   ],
   imports: [
     CommonModule,
-    // Other modules
+    ReactiveFormsModule,
+    FormsModule,
+    NgOptimizedImage,
+  ],
+  providers: [
+    {
+      provide: IMAGE_CONFIG,
+      useValue: {
+        disableImageSizeWarning: true, 
+        disableImageLazyLoadWarning: true
+      }
+    },
+    MovieApiServiceService,
+    FavoriteService,
   ],
 })
 export class YourModule { }
@@ -21,12 +36,20 @@ export class YourModule { }
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HttpClientModule],
-  providers: [MovieApiServiceService],
+  imports: [RouterOutlet, HttpClientModule, YourModule],
+  providers: [MovieApiServiceService, FavoriteService],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'movie-app';
 
+  constructor(private favoriteService: FavoriteService) { } // Add this constructor
+
+  logFavorites() {
+    const storedFavorites = localStorage.getItem('favorites');
+    const favoritesArray = storedFavorites ? JSON.parse(storedFavorites) : [];
+    console.log('Favorites:', favoritesArray);
   }
+  
+}

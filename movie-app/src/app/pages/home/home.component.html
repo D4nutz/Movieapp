@@ -1,28 +1,184 @@
+<!-- overlay search -->
+<div class="overlay__black flex-center">
+  <div class="search__container flex-column flex-center">
+    <div class="container__close__search flex-center flex-row">
+      <div class="search__box_style flex-center flex-row">
+        <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
+          <div class="search__input flex-center">
+              <input type="text" class="search__form" id="search__form" formControlName="movieName" value="clear" placeholder="Search for the movie">
+              <button class="search__btn">
+                <i class="fas fa-search"></i>
+              </button>
+          </div>
+        </form>
+        <button class="clear__input" id="clear__search" (click)="clearSearch()">
+          <i class="fa fa-eraser"></i>
+        </button>
+      </div>
+      <div>
+        <button class="close__overlay" id="close__overlay__search">
+          <i class="fa fa-x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="searched__movie__container flex-center">
+      <div *ngFor="let s of searchResult">
+          <div class="container__card__movie flex-center flex-column">       
+            <div class="movie__cover">
+              <img src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}" alt="{{ s.original_title }}">
+            </div>
+            <div class="text-movie-cont flex-center flex-column">
+              <div class="mr-grid">
+                  <h1>{{s.original_title}}</h1>
+              </div>
+              <div class="mr-grid">
+                <ul class="movie-gen">
+                 <!-- <li><p class="gen__list">{{s.genre_ids}}</p></li> --> 
+                </ul>
+              </div>
+              <div class="mr-grid summary-row">
+                  <h5>SUMMARY</h5>
+                  <ul class="movie-likes">
+                    <li><p>{{s.vote_average}}</p></li>
+                  </ul>
+              </div>
+              <div class="mr-grid">
+                  <p class="movie-description">{{s.overview}}</p>
+              </div>
+              <div class="mr-grid">
+                <p class="movie-actors" *ngFor="let movieCast of castResult">{{ movieCast.cast[0]?.name }}</p>
+              </div>
+              <div class="mr-grid flex-center">
+                  <button class="watch-btn" (click)="navigateToMovie(s.id)">
+                    <span>Read More</span>
+                  </button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- overlay favs movies -->
+
+<div class="overlay__black flex-center" id="favourite">
+  <div class="search__container flex-column flex-center">
+    <div class="flex-center flex-row">
+      <h1>Favourite List</h1>
+      <button class="close__overlay" id="close__overlay__fav">
+        <i class="fa fa-x"></i>
+      </button>
+    </div>
+    <div class="searched__movie__container flex-center">
+      <div *ngFor="let fav of favorites">
+          <div class="container__card__movie flex-center flex-column">       
+            <div class="movie__cover">
+              <img src="https://image.tmdb.org/t/p/original/{{ fav.poster_path }}" alt="{{ fav.original_title }}">
+            </div>
+            <div class="text-movie-cont flex-center flex-column">
+              <div class="mr-grid">
+                  <h1>{{fav.original_title}}</h1>
+              </div>
+              <div class="mr-grid">
+                <ul class="movie-gen">
+                 <!-- <li><p class="gen__list">{{s.genre_ids}}</p></li> --> 
+                </ul>
+              </div>
+              <div class="mr-grid summary-row">
+                  <h5>SUMMARY</h5>
+                  <ul class="movie-likes">
+                    <li><p>{{fav.vote_average}}</p></li>
+                  </ul>
+              </div>
+              <div class="mr-grid">
+                  <p class="movie-description">{{fav.overview}}</p>
+              </div>
+              <div class="mr-grid">
+                <p class="movie-actors"></p>
+              </div>
+              <div class="mr-grid flex-center">
+                  <button class="watch-btn" (click)="navigateToMovie(fav.id)">
+                    <span>Read More</span>
+                  </button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- banner start -->
 
 <div class="carousel js-carousel">
-  <figure class="carousel__frame js-carousel__frame">
+  <figure class="carousel__frame js-carousel__frame flex-center flex-row">
+    <div class="arrow arrow--left" (click)="prevSlide()">
+      <span>Prev</span>
+    </div>
     <div class="carousel__slides js-carousel__slides">
-      <div class="slide__container flex-center flex-row active" data-bs-interval="10000" *ngFor="let b of bannerResult; let i = index"
+      <div class="carousel__active__container active" id="bright" data-bs-interval="10000" *ngFor="let b of bannerResult; let i = index"
       [ngClass]="{ 'active': i === currentIndex }">
-      <div class="card__image flex-center">
-        <img src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}" alt="{{ b.title }}" class="carousel__item">
-      </div>
-      <div class="carousel__content flex-center flex-column">
-        <h2 class="movie__title flex-center">{{b.original_title}}</h2>
-        <p class="movie__description flex-center">{{ b.overview }}</p>
-      </div>
+        <div class="movie_card active">
+          <div class="info_section">
+            <div class="movie_header">
+              <img class="locandina"  src="https://image.tmdb.org/t/p/original/{{ b.poster_path }}" alt="{{ b.original_title }}"/>
+              <h1>{{b.title}}</h1>
+              <h4>{{b.release_date}}, {{b.status}}</h4>
+              <span class="minutes">{{b.runtime}} min</span>
+              <p class="type">Action, Crime, Fantasy</p>
+            </div>
+            <div class="movie_desc">
+              <p class="text">{{b.overview}}</p>
+            </div>
+            <div class="movie_social">
+              <ul class="flex-row">
+                  <li class="flex-row flex-center">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <p>{{b.vote_average}}</p>
+                  </li>
+                  <li class="flex-row flex-center">
+                      <i class="fa-solid fa-play"></i>
+                      <p>{{b.popularity}}</p>
+                  </li>
+                  <li class="flex-row flex-center">
+                    <i class="fa fa-heart" aria-hidden="true" [ngClass]="{ 'active': isFavorite(b.id) }" (click)="addToFavorites(b)"></i>
+                  </li>
+                  <li>
+                    <button class="watch-btn" (click)="navigateToMovie(b.id)">
+                      <span>Read More</span>
+                    </button>
+                  </li>
+              </ul>
+            </div>
+          </div>
+          <div class="blur_back bright_back">
+            <img src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}" alt="{{ b.title }}">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="control flex-center">
-      <div class="arrow arrow--left" (click)="prevSlide()">
-        <span>Prev</span>
-      </div>
-      <div class="arrow arrow--right" (click)="nextSlide()">
-        <span>Next</span>
-      </div>
-    </div>  
+    <div class="arrow arrow--right" (click)="nextSlide()">
+      <span>Next</span>
+    </div>
   </figure>
 </div>
 
+
+
 <!-- banner end -->
+
+<div class="container__movies">
+  <!-- trending movies -->
+  <h2>Trending Movies</h2>
+  <div class="scroll-holder">        
+    <div class="scroll-tray">
+      <ng-container *ngFor="let t of trendingMoviesResult">
+            <div>
+                <img src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}">
+            </div>
+      </ng-container>
+  <!-- trending movies -->
+    </div>
+  </div>
+</div>

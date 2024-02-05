@@ -6,16 +6,21 @@
     <a routerLink="">
       <img src="../assets/img/every-movie-logo.png" alt="Company Logo">
     </a>
+    <div class="mobile-icons flex-center flex-row">
+      <i class="fa fa-heart flex-center" id="fav-menu-mobile" aria-hidden="true" (click)="logFavorites()"></i>
+      <i class="fas fa-search flex-center" id="search-icon-mobile"></i>
+    </div>
     <div class="menu-toggle" id="mobile-menu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
     <ul class="nav no-search">
+      <li class="background__mobile__view"></li>
       <li class="nav-item"><a routerLink="">Home</a></li>
-          <li class="nav-item"><a href="#">Contact Us</a></li>
-      <i class="fas fa-search" id="search-icon"></i>
-      <input class="search-input" type="text" placeholder="Search..">
+      <li class="nav-item"><a href="#">Contact Us</a></li>
+      <i class="fa fa-heart flex-center" id="fav-menu" aria-hidden="true" (click)="logFavorites()"></i>
+      <i class="fas fa-search flex-center" id="search-icon"></i>
     </ul>
   </nav>
   </div>
