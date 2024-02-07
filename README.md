@@ -173,6 +173,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [TS-url]: https://www.typescriptlang.org/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
-[Node.js]: https://img.shields.io/node/v/:packageName
+[Node.js]: https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white
 [Node-url]: https://nodejs.org/en
+
 
