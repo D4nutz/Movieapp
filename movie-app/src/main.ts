@@ -7,6 +7,11 @@ bootstrapApplication(AppComponent, appConfig)
   
   document.addEventListener("DOMContentLoaded", function () {
 
+    document.querySelector(".blank__ball")?.classList.add("blank__ball__translate");
+    document.querySelector(".blank__every")?.classList.add("blank__every__translate");
+    document.querySelector(".blank__movie")?.classList.add("blank__movie__translate");
+
+
     document.querySelector("#search-icon")?.addEventListener("click", (event) => {
       // Stop the event propagation to prevent immediate hiding
       event.stopPropagation();
@@ -87,6 +92,8 @@ bootstrapApplication(AppComponent, appConfig)
         document.querySelector("#favourite")?.classList.remove("search__active");
       }
     });
+
+    
     
   });
   
