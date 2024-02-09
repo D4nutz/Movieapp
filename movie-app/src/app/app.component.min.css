@@ -4,25 +4,25 @@
     animation-fill-mode: forwards;
   }
   
-  .blank__every__translate{
+.blank__every__translate{
     animation: blank__every__translate 1.5s ease;
     animation-fill-mode: forwards;
     animation-delay: 0.3s;
   }
   
-  .blank__movie__translate{
+.blank__movie__translate{
     animation: blank__movie__translate 1.7s ease;
     animation-fill-mode: forwards;
     animation-delay: 3.2s;
   }
   
-  .blank__ball__translate{
+.blank__ball__translate{
     animation: blank__ball__translate 3.3s ease;
     animation-fill-mode: forwards;
     animation-delay: 5.2s;
   }
   
-  .overlay__translation{
+.overlay__translation{
     animation: overlay__translation 1s ease;
     animation-fill-mode: forwards;
     animation-delay: 8s;
