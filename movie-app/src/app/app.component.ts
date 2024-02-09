@@ -39,7 +39,7 @@ export class YourModule { }
   imports: [RouterOutlet, HttpClientModule, YourModule],
   providers: [MovieApiServiceService, FavoriteService],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css', './app.component.min.css']
 })
 export class AppComponent {
   title = 'movie-app';

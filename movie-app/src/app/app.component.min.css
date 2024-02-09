@@ -1,0 +1,239 @@
+
+.slide__right__every{
+    animation: slide__right__every 8s ease;
+    animation-fill-mode: forwards;
+  }
+  
+  .blank__every__translate{
+    animation: blank__every__translate 1.5s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+  }
+  
+  .blank__movie__translate{
+    animation: blank__movie__translate 1.7s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 3.2s;
+  }
+  
+  .blank__ball__translate{
+    animation: blank__ball__translate 3.3s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 5.2s;
+  }
+  
+  .overlay__translation{
+    animation: overlay__translation 1s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 8s;
+  }
+  
+  @keyframes overlay__translation{
+    0%{
+      opacity: 1;
+      transform: scale(1);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    100%{
+      opacity: 0;
+      transform: scale(1.5, 1.5);
+      display: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  @keyframes blank__every__translate{
+    0%{
+        left: 5%;
+    }
+    100%{
+        left: 100%;
+    }
+  }
+  
+  @keyframes blank__movie__translate{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: -100%;
+    }
+  }
+  
+  @keyframes blank__ball__translate{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: -120%;
+    }
+  }
+  
+  @keyframes slide__right__every{
+    0%{
+        left: -3%;
+        height: 5%;
+        opacity: 1;
+    }
+    5%{
+        left: -3%;
+        height: 50%;
+        opacity: 1;
+    }
+    20%{
+        top: -5%;
+        left: 100%;
+        height: 50%;
+        opacity: 1;
+  
+    }
+    25%{
+        top: 45%;
+        left: 100%;
+        height: 5%;
+        opacity: 1;
+    }
+    40%{
+        top: 45%;
+        left: 100%;
+        height: 50%;
+        opacity: 1;
+    }
+    60%{
+        top: 45%;
+        left: -3%;
+        height: 50%;
+        opacity: 1;
+  
+    }
+    65%{
+        height: 100%;
+        top: -5%;
+        left: -3%;
+        opacity: 1;
+  
+    }
+    95%{
+        height: 100%;
+        top: -5%;
+        left: -65%;
+    }
+    100%{
+        height: 0%;
+        top: -5%;
+        left: -65%;
+    }
+  }
+  
+@media only screen and (max-width: 600px){
+    .logo__ball__container{
+        justify-content: right;
+        width: 7rem;
+    }
+  
+    .logo__every__container,
+    .logo__movie__container{
+        justify-content: left;
+        width: 8.5rem;
+    }
+  
+    .logo-movie-correction{
+        margin-left: 0;
+        margin-bottom: -1.5rem;
+        margin-top: 1rem;
+    }
+  
+    .blank__every{
+        top: -10%;
+        left: 0%;
+    }
+  
+    .blank__movie{
+        top: 15%;
+        left: 0%;
+    }
+  
+    .line-start{
+        height: 35%;
+        top: 15%;
+    }
+  
+    .blank__every__translate{
+        animation: blank__every__translate 1s ease;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+    }
+    
+    .blank__movie__translate{
+        animation: blank__movie__translate 1.3s ease;
+        animation-fill-mode: forwards;
+        animation-delay: 3.3s;
+    }
+    
+    .blank__ball__translate{
+        animation: blank__ball__translate 3s ease;
+        animation-fill-mode: forwards;
+        animation-delay: 5.2s;
+    }
+  
+    @keyframes slide__right__every{
+        0%{
+            left: -10%;
+            height: 5%;
+            top: 15%;
+            opacity: 1;
+        }
+        5%{
+            left: -10%;
+            height: 35%;
+            top: 15%;
+            opacity: 1;
+        }
+        20%{
+            top: 15%;
+            left: 110%;
+            height: 35%;
+            opacity: 1;
+    
+        }
+        25%{
+            top: 50%;
+            left: 110%;
+            height: 5%;
+            opacity: 1;
+        }
+        40%{
+            top: 50%;
+            left: 110%;
+            height: 35%;
+            opacity: 1;
+        }
+        60%{
+            top: 50%;
+            left: -10%;
+            height: 35%;
+            opacity: 1;
+        }
+        65%{
+            height: 70%;
+            top: 15%;
+            left: -10%;
+            opacity: 1;
+        }
+        95%{
+            height: 70%;
+            top: 15%;
+            left: -100%;
+        }
+        100%{
+            height: 0%;
+            top: 15%;
+            left: -100%;
+        }
+    }
+  
+  }

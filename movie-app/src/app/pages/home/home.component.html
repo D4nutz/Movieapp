@@ -1,5 +1,4 @@
 
-
 <!-- overlay search -->
 <div class="overlay__black flex-center">
   <div class="search__container flex-column flex-center">
@@ -166,8 +165,6 @@
   </figure>
 </div>
 
-
-
 <!-- banner end -->
 
 <div class="container__movies">
@@ -177,7 +174,7 @@
     <div class="scroll-tray">
       <ng-container *ngFor="let t of trendingMoviesResult">
             <div>
-                <img src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}">
+                <img src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}" alt="{{t.original_title}}">
             </div>
       </ng-container>
   <!-- trending movies -->

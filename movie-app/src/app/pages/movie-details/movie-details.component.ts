@@ -5,7 +5,7 @@ import { MovieApiServiceService } from '../../service/movie-api-service.service'
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrl: './movie-details.component.css'
+  styleUrls: ['./movie-details.component.css', './movie-details.component.min.css']
 })
 
 export class MovieDetailsComponent implements OnInit {

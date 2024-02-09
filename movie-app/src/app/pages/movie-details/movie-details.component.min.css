@@ -1,0 +1,38 @@
+@media screen and (min-width: 768px) {
+    .movie_header {
+        width: 60%;
+   }
+    .movie_desc {
+        width: 50%;
+   }
+    .info_section {
+        background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+   }
+    .blur_back {
+        width: 80%;
+        background-position: -100% 10% !important;
+   }
+}
+@media screen and (max-width: 768px) {
+    .movie_card {
+        width: 95%;
+        margin: 70px auto;
+        min-height: 350px;
+        height: auto;
+   }
+    .blur_back {
+        width: 100%;
+        background-position: 50% 50% !important;
+   }
+    .movie_header {
+        width: 100%;
+        margin-top: 85px;
+   }
+    .movie_desc {
+        width: 100%;
+   }
+    .info_section {
+        background: linear-gradient(to top, #141413 50%, transparent 100%);
+        display: inline-grid;
+   }
+}

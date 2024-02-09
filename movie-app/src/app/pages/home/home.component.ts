@@ -11,7 +11,7 @@ interface MovieCast {
 
 @Component({
   selector: 'app-home',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.css', './home.component.min.css'],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {

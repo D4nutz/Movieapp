@@ -1,0 +1,154 @@
+.search__active{
+    display: flex;
+    z-index: 99;
+    animation: easein 0.3s ease-in-out;
+  }
+
+.search__animated{
+    animation: opensearch 1s ease-in-out;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+}  
+
+.scroll-holder .scroll-tray:first-child {
+    animation: scroll-tray-hero 180s linear infinite;
+}
+  
+  .scroll-holder .scroll-tray:last-child {
+    animation: scroll-tray-hero 120s linear infinite;
+}
+
+@keyframes scroll-tray-hero {
+    0% {
+      transform: translateX(0);
+    }
+  
+    99.99% {
+      transform: translateX(-7098px);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+@keyframes easein {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  
+  @keyframes opensearch {
+    0%{
+      width: 0px;
+      padding: 0px;
+      }
+    100%{
+      width: 240px;
+      padding: 0 6px;
+    }
+  }
+  
+  #favourite h1{
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--white);
+  }
+  
+  @media screen and (min-width: 768px) {
+    .movie_header {
+        width: 60%;
+   }
+    .movie_desc {
+        width: 50%;
+   }
+    .info_section {
+        background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+   }
+    .blur_back {
+        width: 80%;
+        background-position: -100% 10% !important;
+   }
+  }
+  @media screen and (max-width: 768px) {
+    .movie_card {
+        width: 95%;
+        min-height: 350px;
+        height: auto;
+        margin: 1rem auto;
+   }
+    .blur_back {
+        width: 100%;
+        background-position: 50% 50% !important;
+   }
+    .movie_header {
+        width: 100%;
+        margin-top: 85px;
+   }
+   .movie_header h1{
+      font-size: 1rem;
+   }
+    .movie_desc {
+        width: 95%;
+   }
+   .arrow{
+    z-index: 98;
+    margin-top: 2rem;
+   }
+   .arrow.arrow--right:hover:before {
+    left: 60%;
+   }
+   .arrow.arrow--left:hover:before {
+    right: 60%;
+   }
+  
+  #favourite.overlay__black{
+    top: 30%;
+  }
+  #favourite .search__container{
+    height: 50%;
+  }
+  
+  .search__box_style{
+    width: 80%;
+    border: none;
+  }
+  
+  .search__box_style form {
+    width: 90%;
+  }
+  
+  .search__input{
+    width: 80%;
+  }
+  
+  #search__form{
+    width: 80%;
+  }
+  
+  .info_section {
+    background: linear-gradient(to top, #141413 50%, transparent 100%);
+    display: inline-grid;
+  }
+  
+   .carousel__active__container{
+    width: 100%;
+    height: 100%;
+  }
+  .carousel__frame{
+    height: 60dvh;
+    align-items: flex-start;
+    margin: auto;
+    padding: 1rem;
+    width: auto;
+    margin-bottom: 2rem;
+  }
+  .searched__movie__container{
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  }
+  
+  
