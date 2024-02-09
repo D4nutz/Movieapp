@@ -3,9 +3,288 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/D4nutz/Movieapp.git">
-    <img src="/movie-app/src/assets/img/every-movie-logo.png" alt="Logo" width="150" height="80">
-  </a>
+  <svg fill="none" viewBox="0 0 400 400" width="400" height="400" xmlns="https://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+      <div xmlns="https://www.w3.org/1999/xhtml">
+        <style>
+/*z-indexes*/
+.line-start{
+  z-index: 12;
+}
+
+.blank__ball{
+  z-index: 11;
+}
+
+.logo__ball__container{
+  z-index: 10;
+}
+
+.blank__movie{
+  z-index: 9;
+}
+
+.logo__movie__container{
+  z-index: 8;
+}
+
+.blank__every{
+  z-index: 7;
+}
+
+.logo__every__container{
+  z-index: 6;
+}
+
+/*optional for correction*/
+
+.logo-movie-correction{
+  margin-left: -4rem;
+}
+
+.overlay__animation{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: rgba(0, 0 , 0, 1);
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 99;
+}
+
+.container__dimmensions{
+  height: 90dvh;
+  position: relative;
+  gap: 1rem;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.logo__ball__container{
+  height: 100%;
+  height: 10rem;
+  position: relative;
+}
+
+.logo__movie__container,
+.logo__every__container{
+  width: 100%;
+  height: 5rem;
+  position: relative;
+}
+
+.logo__ball__container img,
+.logo__every__container img,
+.logo__movie__container img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.logo__movie__container{
+  margin-bottom: 1rem;
+}
+
+.line-start{
+  content: "";
+  width: .5rem;
+  height: 50%;
+  position: absolute;
+  background-color: red;
+  top: -5%;
+  left: -3%;
+  border-radius: .5rem; 
+}
+
+.blank__every{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0 , 0, 1);
+  top: 0%;
+  left: 5%;
+}
+
+.blank__movie{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0 , 0, 1);
+  top: 0%;
+  left: 0%;
+}
+
+.blank__ball{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0 , 0, 1);
+  top: 0%;
+  left: 0%;
+}
+
+.container__text{
+  position: relative;
+}
+
+.slide__right__every{
+    animation: slide__right__every 8s ease;
+    animation-fill-mode: forwards;
+  }
+  
+.blank__every__translate{
+    animation: blank__every__translate 1.5s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+  }
+  
+.blank__movie__translate{
+    animation: blank__movie__translate 1.7s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 3.2s;
+  }
+  
+.blank__ball__translate{
+    animation: blank__ball__translate 3.3s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 5.2s;
+  }
+@media only screen and (max-width: 600px){
+    .logo__ball__container{
+        justify-content: right;
+        width: 7rem;
+    }
+  
+    .logo__every__container,
+    .logo__movie__container{
+        justify-content: left;
+        width: 8.5rem;
+    }
+  
+    .logo-movie-correction{
+        margin-left: 0;
+        margin-bottom: -1.5rem;
+        margin-top: 1rem;
+    }
+  
+    .blank__every{
+        top: -10%;
+        left: 0%;
+    }
+  
+    .blank__movie{
+        top: 15%;
+        left: 0%;
+    }
+  
+    .line-start{
+        height: 35%;
+        top: 15%;
+    }
+  
+    .blank__every__translate{
+        animation: blank__every__translate 1s ease;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+    }
+    
+    .blank__movie__translate{
+        animation: blank__movie__translate 1.3s ease;
+        animation-fill-mode: forwards;
+        animation-delay: 3.3s;
+    }
+    
+    .blank__ball__translate{
+        animation: blank__ball__translate 3s ease;
+        animation-fill-mode: forwards;
+        animation-delay: 5.2s;
+    }
+  
+    @keyframes slide__right__every{
+        0%{
+            left: -10%;
+            height: 5%;
+            top: 15%;
+            opacity: 1;
+        }
+        5%{
+            left: -10%;
+            height: 35%;
+            top: 15%;
+            opacity: 1;
+        }
+        20%{
+            top: 15%;
+            left: 110%;
+            height: 35%;
+            opacity: 1;
+    
+        }
+        25%{
+            top: 50%;
+            left: 110%;
+            height: 5%;
+            opacity: 1;
+        }
+        40%{
+            top: 50%;
+            left: 110%;
+            height: 35%;
+            opacity: 1;
+        }
+        60%{
+            top: 50%;
+            left: -10%;
+            height: 35%;
+            opacity: 1;
+        }
+        65%{
+            height: 70%;
+            top: 15%;
+            left: -10%;
+            opacity: 1;
+        }
+        95%{
+            height: 70%;
+            top: 15%;
+            left: -100%;
+        }
+        100%{
+            height: 0%;
+            top: 15%;
+            left: -100%;
+        }
+    }
+  
+  }
+        </style>
+         <div class="flex-center flex-row container__dimmensions">
+    <div class="flex-center logo__ball__container">
+        <img src="../assets/img/logo_ball.png" alt="Company Logo">
+        <div class="blank__ball"></div>
+    </div>
+    <div class="flex-center flex-column container__text">
+        <div class="flex-center logo__every__container logo-movie-correction">
+            <img src="../assets/img/logo_every.png" alt="Company Logo">
+        <div class="blank__every"></div>
+        </div>
+        <div class="line-start slide__right__every"></div>
+        <div class="flex-center logo__movie__container">
+            <img src="../assets/img/logo_movie.png" alt="Company Logo">
+            <div class="blank__movie"></div>
+        </div>
+    </div>
+  </div>
+      </div>
+    </foreignObject>
+  </svg>
 
   <h3 align="center">EveryMovie-Readme</h3>
 
