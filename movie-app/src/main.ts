@@ -11,6 +11,11 @@ bootstrapApplication(AppComponent, appConfig)
     document.querySelector(".blank__every")?.classList.add("blank__every__translate");
     document.querySelector(".blank__movie")?.classList.add("blank__movie__translate");
 
+    if(window.innerWidth < 600){
+      document.querySelector(".line-start")?.classList.add("slide__right__every_mobile");
+    } else{
+      document.querySelector(".line-start")?.classList.add("slide__right__every");
+    }
 
     document.querySelector("#search-icon")?.addEventListener("click", (event) => {
       // Stop the event propagation to prevent immediate hiding
